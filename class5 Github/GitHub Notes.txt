@@ -1,0 +1,72 @@
+GITHUB (VERSION CONTROL SYSTEM)
+
+- code storage 
+- team work (branching(qasim/dev) --> main/master)
+- code versioning
+
+1- LOCAL CONFUGURATION SETUP
+
+- search(web credential) >> window credentials >> remove github cred (if required)
+- Make sure github bash is installed
+- Choose any direcotry where you want to crete repo eg: D:\
+- Create a folder name "github-learn-repo" (fyi.. it will be a repo name)
+- Goto "github-learn-repo" & open git bash from there
+- run command >> git init ( it will initializr github in the respective direcotry with .git hidden folder)
+- make sure your username & email configuration is setup locally
+>> git config --global user.name "<github user name should be there>"
+>> git config --global user.email "<your email of github>"
+
+- to validate above configuration run following commands
+>> git config --global user.name
+>> git config --global user.email
+
+2- GIT CONNECTIVITY WITH REMOTE REPO
+
+- Make sure you should have github account
+- If you don't have then create it using https://github.com/
+- Login to your Github Acocunt
+- Click on "+" icon on right top then click on "New Repository"
+- Fille the open table & give following details
+	1- Github Repository name* --> github-learn-repo
+	2- Procide Description --> Learning Github at Saylani 912am
+	3- Make sure repo id PUBLIC
+- After making sure click on CREATE REPOSITORY button
+
+…or create a new repository on the command line
+echo "# github-learn-repo" >> README.md
+git init (initalize/reinitalize the git)
+git status (shows all untracked files)
+git add README.md OR git add -A OR git add . ( to add file/files changes to be committed)
+git commit -m "first commit" ( commit those added file/files using git add command)
+git branch -M main (rename the branch to "main" from "master")
+git remote add origin https://github.com/aiwithqasim/github-learn-repo.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/aiwithqasim/github-learn-repo.git
+git branch -M main
+git push -u origin main
+
+3- BRANCHING
+
+git branch -a (status about number of branches & working branch)
+git checkout -b task/qasim (create new branch & go to that branch)
+git add .. commit .. push
+
+- on git remote you can create pull request to merger yo main branch
+
+
+4- CONFLICT RESOLVING
+
+CASE I: ( When only remote have changes)
+... when remote is ahead of your local branch
+git pull (to upstream your local  with remote)
+
+CASE II: ( when both local & remote are changed
+git stash
+git merge
+git stash pop
+>> modify the file of conflict eg: <assignment1.txt>
+git add assignment1.txt
+git commit -m "updated"
+git push
